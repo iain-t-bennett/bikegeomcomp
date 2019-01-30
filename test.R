@@ -75,6 +75,24 @@ nukeproof_scalp_M = bikedata(
   chainstay = 446.3
 )
 
+nukeproof_scalp_S = bikedata(
+  brand = "Nukeproof",
+  model = "Scalp",
+  size = "S",
+  wheelbase = 1176.8,
+  wheel_size_in = 26,
+  reach = 370.6,
+  stack = 602.1,
+  fork_length = 585,
+  headtube_length = 124,
+  headtube_angle = 63,
+  seat_angle = 68,
+  seat_length = 390,
+  chainstay = 446.3
+)
+
+nukeproof_scalp_S
+
 ragley_bluepig_20 = bikedata(
   brand = "Ragley",
   model = "BluePig",
@@ -95,13 +113,39 @@ ragley_bluepig_20 = bikedata(
 nukeproof_scalp_M
 plot(nukeproof_scalp_M)
 
+cube_travel_sl_58 = bikedata(
+  brand = "Cube",
+  model = "Travel SL",
+  size = "58",
+  wheelbase = 1066,
+  fork_length = 627 - 190,
+  wheel_size_in = 29,
+  bbdiff = -50, 
+  reach = 414,
+  stack = 570,
+  headtube_length = 190,
+  headtube_angle = 72 ,
+  seat_angle = 73 ,
+  seat_length = 560,
+  chainstay = 430
+)
+
+plot(cube_travel_sl_58) 
+
 
 plot(nukeproof_scalp_L) %>%
-  geomBike(bd = nukeproof_scalp_M)
+  geomBike(bd = nukeproof_scalp_M) %>%
+  geomBike(bd = nukeproof_scalp_S)
 
 plot(nukeproof_scalp_L) %>%
   geomBike(bd = ragley_bluepig_20) %>%
   geomBike(bd = norco_sight_L)
+
+plot(cube_travel_sl_58) %>%
+  geomBike(bd = spot_rocket_L)
+
+plot(cube_travel_sl_58) %>%
+  geomBike(bd = ragley_bluepig_20) %>%
 
 plot(ragley_bluepig_20) %>%
   geomBike(bd = spot_rocket_L) 
